@@ -34,7 +34,7 @@ export class EventContainer {
     // can be accessed by the dispatchEvent caller ???
     dispatchEvent(event: Event): void {
         const handlers: EventHandler[] = this
-            .getEventListeners(event.name).map(
+            .getEventListeners(event.type).map(
                 eventHandlerPair => eventHandlerPair.handler
             );
         
@@ -48,10 +48,10 @@ export class EventContainer {
 }
 
 export class Event {
-    readonly name: string;
+    readonly type: string;
     readonly data: object | null;
     constructor(eventName: string, eventData: object | null = null) {
-        this.name = eventName;
+        this.type = eventName;
         this.data = eventData;
     }
 }
