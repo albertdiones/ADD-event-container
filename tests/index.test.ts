@@ -14,4 +14,15 @@ test(
     () => {
         new EventContainer();
     }
+);
+
+test(
+    "addEventListener('event_name', handler)",
+    () => {
+        const container = new EventContainer();
+        const handler = () => console.log('event handled');
+        expect(container).toHaveProperty('addEventListener');
+
+        container.addEventListener('event_name', handler);
+    }
 )

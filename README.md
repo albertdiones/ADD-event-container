@@ -12,8 +12,8 @@ Todo List:
  # [x] -Research if Bun has a built in event handler-
  # [x] Install dependencies
     ## jest
- # Fail test: new EventContainer()
- # Pass Test ~ create EventContainer class
+ # [x] Fail test: new EventContainer()
+ # [x] Pass Test ~ create EventContainer class
  # Fail Test: container1.addEventListener('event_name', handler)
     ## container2.addEventListener('event_name',handler);
  # Pass Test ~ create addEventListener() function
