@@ -62,3 +62,29 @@ test(
         expect(counter).toBe(2);
     }
 )
+
+
+test(
+    "Container dispatchEvent with event context",
+    () => {
+        const container = new EventContainer();
+
+        expect(container).toHaveProperty('dispatchEvent');
+        expect(container.dispatchEvent).toBeInstanceOf(Function);
+
+        let lastKeyPress = 'x';
+        container.addEventListener(
+            'last_key_pressed',
+            (data) => {
+                lastKeyPress = data.key_pressed;
+            }
+        );
+
+        container.dispatchEvent(
+            'last_key_pressed',
+            { 'key_pressed': 'z' }
+        );
+
+        expect(lastKeyPress).toBe('z');
+    }
+)

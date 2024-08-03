@@ -1,7 +1,6 @@
 
 
-
-type EventHandler = () => void;
+type EventHandler = (data: object) => void;
 
 
 // possibly renameable to something more descriptive? because what pair???
@@ -33,7 +32,7 @@ export class EventContainer {
 
     // return a map of Array of Promises so the event handler's results
     // can be accessed by the dispatchEvent caller ???
-    dispatchEvent(eventName: string): void {
+    dispatchEvent(eventName: string, data: object | null = null): void {
         const handlers: EventHandler[] = this
             .getEventListeners(eventName).map(
                 eventHandlerPair => eventHandlerPair.handler
@@ -41,7 +40,7 @@ export class EventContainer {
         
         handlers.map(
             (handler: EventHandler) => {
-                handler(/* data */) // should pass event details/context
+                handler(data ?? {}); // should pass event details/context
             }
         );
     }
