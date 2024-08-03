@@ -84,7 +84,8 @@ test(
         let lastKeyPress = 'x';
         container.addEventListener(
             'last_key_pressed',
-            (data) => {
+            (event: Event) => {
+                const data = event.data;
                 lastKeyPress = data.key_pressed;
             }
         );

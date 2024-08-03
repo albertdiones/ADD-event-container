@@ -1,6 +1,6 @@
 
 
-type EventHandler = (data: object) => void;
+type EventHandler = (event: Event) => void;
 
 
 // possibly renameable to something more descriptive? because what pair???
@@ -40,7 +40,7 @@ export class EventContainer {
         
         handlers.map(
             (handler: EventHandler) => {
-                handler(event.data ?? {}); // should pass event details/context
+                handler(event) // should pass event details/context
             }
         );
     }
