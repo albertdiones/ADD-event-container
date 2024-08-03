@@ -10,7 +10,7 @@ ETA: 4:19PM to 6:19PM
 Todo List:
  # [x] -Git init and push to github-
  # [x] -Research if Bun has a built in event handler-
- # Install dependencies
+ # [x] Install dependencies
     ## jest
  # Fail test: new EventContainer()
  # Pass Test ~ create EventContainer class
