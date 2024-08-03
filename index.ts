@@ -24,7 +24,7 @@ export class EventContainer {
     }
 
     getEventListeners(eventName: string) {
-        return this.handlers.length;
+        return this.handlers;
     }
     
 }

@@ -27,12 +27,12 @@ test(
         expect(container).toHaveProperty('getEventListeners');
         expect(
             container.getEventListeners('battery_low')
-        ).toBe(0);
+        ).toHaveLength(0);
 
         expect(container).toHaveProperty('addEventListener');
 
         container.addEventListener('battery_low', handler);
 
-        container.getEventListeners('battery_low');
+        expect(container.getEventListeners('battery_low')).toHaveLength(1);
     }
 )
