@@ -14,8 +14,8 @@ export class EventContainer {
 
     handlers: EventHandlerPair[] = [];
 
-    addEventListener(eventName: string, handler: EventHandler) {
-        return this.handlers.push(
+    addEventListener(eventName: string, handler: EventHandler): void {
+        this.handlers.push(
             {
                 event_name: eventName, 
                 handler: handler
@@ -23,12 +23,16 @@ export class EventContainer {
         );
     }
 
-    getEventListeners(eventName: string) {
+    getEventListeners(eventName: string): EventHandlerPair[] {
         return this.handlers.filter(
             (handlerPair: EventHandlerPair) => {
                 return handlerPair.event_name === eventName;
             } 
         );
+    }
+
+    dispatchEvent(eventName: string): void {
+
     }
     
 }

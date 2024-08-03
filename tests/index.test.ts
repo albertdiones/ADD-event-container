@@ -37,4 +37,14 @@ test(
 
         expect(container.getEventListeners('battery_low')).toHaveLength(1);
     }
+);
+
+test(
+    "Container dispatchEvent('event_name')",
+    () => {
+        const container = new EventContainer();
+
+        expect(container).toHaveProperty('dispatchEvent');
+        expect(container.dispatchEvent).toBeInstanceOf(Function);
+    }
 )
