@@ -65,7 +65,7 @@ test(
         );
 
         container.dispatchEvent(
-            'button_pressed'
+            new Event('button_pressed')
         );
 
         expect(counter).toBe(2);
@@ -90,8 +90,10 @@ test(
         );
 
         container.dispatchEvent(
-            'last_key_pressed',
-            { 'key_pressed': 'z' }
+            new Event(
+                'last_key_pressed',
+                { 'key_pressed': 'z' }
+            )
         );
 
         expect(lastKeyPress).toBe('z');

@@ -32,15 +32,15 @@ export class EventContainer {
 
     // return a map of Array of Promises so the event handler's results
     // can be accessed by the dispatchEvent caller ???
-    dispatchEvent(eventName: string, data: object | null = null): void {
+    dispatchEvent(event: Event): void {
         const handlers: EventHandler[] = this
-            .getEventListeners(eventName).map(
+            .getEventListeners(event.name).map(
                 eventHandlerPair => eventHandlerPair.handler
             );
         
         handlers.map(
             (handler: EventHandler) => {
-                handler(data ?? {}); // should pass event details/context
+                handler(event.data ?? {}); // should pass event details/context
             }
         );
     }
@@ -49,8 +49,8 @@ export class EventContainer {
 
 export class Event {
     readonly name: string;
-    readonly data: object;
-    constructor(eventName: string, eventData: object) {
+    readonly data: object | null;
+    constructor(eventName: string, eventData: object | null = null) {
         this.name = eventName;
         this.data = eventData;
     }

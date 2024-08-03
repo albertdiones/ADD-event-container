@@ -23,7 +23,7 @@ Todo List:
  * [x] Pass test ~ triggers handlers on event
  * [x] Fail Test: dispatch with data or event context
  * [x] Pass test: pass the event data to the handler
- * Fail Test: new Event(event_name, event_context)
- * Pass Test: Create new class Event()
+ * [x] Fail Test: new Event(event_name, event_context)
+ * [x] Pass Test: Create new class Event()
  * Fail Test: structure on the event data
  * Pass test: create/update interface for the event data
