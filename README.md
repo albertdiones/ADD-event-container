@@ -14,9 +14,9 @@ Todo List:
     ## jest
  # [x] Fail test: new EventContainer()
  # [x] Pass Test ~ create EventContainer class
- # Fail Test: container1.addEventListener('event_name', handler)
+ # [x] Fail Test: container1.addEventListener('event_name', handler)
     ## container2.addEventListener('event_name',handler);
- # Pass Test ~ create addEventListener() function
+ # [x] Pass Test ~ create addEventListener() function
  # Fail Test: container1.dispatch('event_name2')
  # Pass Test ~ create dispatch()
  # Fail Test: container1.dispatch('event_name') ~ check if handler is triggered

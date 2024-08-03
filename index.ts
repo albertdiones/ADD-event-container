@@ -24,7 +24,11 @@ export class EventContainer {
     }
 
     getEventListeners(eventName: string) {
-        return this.handlers;
+        return this.handlers.filter(
+            (handlerPair: EventHandlerPair) => {
+                return handlerPair.event_name === eventName;
+            } 
+        );
     }
     
 }

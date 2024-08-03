@@ -33,6 +33,8 @@ test(
 
         container.addEventListener('battery_low', handler);
 
+        container.addEventListener('fully_charged', handler);
+
         expect(container.getEventListeners('battery_low')).toHaveLength(1);
     }
 )
