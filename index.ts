@@ -1,14 +1,29 @@
 
 
+
+type EventHandler = () => void;
+
+
+// possibly renameable to something more descriptive? because what pair???
+interface EventHandlerPair {
+    event_name: string;
+    handler: EventHandler;
+}
+
 export class EventContainer {
 
-    handlers: Function[] = [];
+    handlers: EventHandlerPair[] = [];
 
-    addEventListener(eventName: string[], handler) {
-        return this.handlers.push(handler);
+    addEventListener(eventName: string, handler: EventHandler) {
+        return this.handlers.push(
+            {
+                event_name: eventName, 
+                handler: handler
+            }
+        );
     }
 
-    getEventListeners(eventName: string[]) {
+    getEventListeners(eventName: string) {
         return this.handlers.length;
     }
     
