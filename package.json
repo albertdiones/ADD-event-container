@@ -1,0 +1,29 @@
+{
+  "name": "add_event_driven",
+  "description": "Requirements:\r  * a function e.g. addEventListener('candle_updated', () => {})\r  * a function for dispatching event dispatchEvent('candle_updated')\r  * a test confirming that dispatching an event triggers a handler",
+  "version": "0.0.0",
+  "main": "index.ts",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/albertdiones/add_event_driven.git"
+  },
+  "keywords": [
+    "Event",
+    "Driven",
+    "Architecture",
+    "Dispatch",
+    "Handler"
+  ],
+  "author": "adiones@addteam.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertdiones/add_event_driven/issues"
+  },
+  "homepage": "https://github.com/albertdiones/add_event_driven#readme"
+}
