@@ -17,7 +17,7 @@ Todo List:
  * [x] Fail Test: container1.addEventListener('event_name', handler)
     ** container2.addEventListener('event_name',handler);
  * [x] Pass Test ~ create addEventListener() function
- * [] Fail Test: container1.dispatch('event_name2')
- * [] Pass Test ~ create dispatch()
- * [] Fail Test: container1.dispatch('event_name') ~ check if handler is triggered
- * [] Pass test ~ triggers handlers on event
+ * [x] Fail Test: container1.dispathEvent('event_name2')
+ * [x] Pass Test ~ create dispathEvent() 
+ * [x] Fail Test: container1.dispathEvent('event_name') ~ check if handler is triggered
+ * [x] Pass test ~ triggers handlers on event

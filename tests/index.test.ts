@@ -46,5 +46,19 @@ test(
 
         expect(container).toHaveProperty('dispatchEvent');
         expect(container.dispatchEvent).toBeInstanceOf(Function);
+
+        let counter = 1;
+        container.addEventListener(
+            'button_pressed',
+            () => {
+                ++counter;
+            }
+        );
+
+        container.dispatchEvent(
+            'button_pressed'
+        );
+
+        expect(counter).toBe(2);
     }
 )
