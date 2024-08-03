@@ -25,5 +25,8 @@ Todo List:
  * [x] Pass test: pass the event data to the handler
  * [x] Fail Test: new Event(event_name, event_context)
  * [x] Pass Test: Create new class Event()
- * Fail Test: structure on the event data
- * Pass test: create/update interface for the event data
+ * [x] Fail Test: structure on the event data
+ * [x] Pass test: create/update interface for the event data
+ * addEventListener() priority parameter, allowing specific handlers to have priority over others
+ * addEventListener handler label, which will allow readability or identifiability on the handler
+ * addEventListener Schedule???? allowing delayed or deferred handling of the event
