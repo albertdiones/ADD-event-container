@@ -46,3 +46,12 @@ export class EventContainer {
     }
     
 }
+
+export class Event {
+    readonly name: string;
+    readonly data: object;
+    constructor(eventName: string, eventData: object) {
+        this.name = eventName;
+        this.data = eventData;
+    }
+}

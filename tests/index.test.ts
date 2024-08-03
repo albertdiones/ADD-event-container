@@ -1,5 +1,5 @@
 import {test, expect} from "@jest/globals"
-import {EventContainer} from '..';
+import {EventContainer, Event} from '..';
 
 test(
     "test working",
@@ -38,6 +38,15 @@ test(
         expect(container.getEventListeners('battery_low')).toHaveLength(1);
     }
 );
+
+test(
+    'new Event()',
+    () => {
+        const click = new Event('click',{keyCode: 123});
+
+        expect(click).toBeInstanceOf(Event);
+    }
+)
 
 test(
     "Container dispatchEvent('event_name')",
@@ -87,4 +96,4 @@ test(
 
         expect(lastKeyPress).toBe('z');
     }
-)
+);

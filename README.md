@@ -21,7 +21,9 @@ Todo List:
  * [x] Pass Test ~ create dispathEvent() 
  * [x] Fail Test: container1.dispathEvent('event_name') ~ check if handler is triggered
  * [x] Pass test ~ triggers handlers on event
- * Fail Test: dispatch with data or event context
- * Pass test: pass the event data to the handler
+ * [x] Fail Test: dispatch with data or event context
+ * [x] Pass test: pass the event data to the handler
+ * Fail Test: new Event(event_name, event_context)
+ * Pass Test: Create new class Event()
  * Fail Test: structure on the event data
  * Pass test: create/update interface for the event data
