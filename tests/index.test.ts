@@ -1,4 +1,5 @@
 import {test, expect} from "@jest/globals"
+import {EventContainer} from '..';
 
 test(
     "test working",
@@ -7,3 +8,10 @@ test(
         expect(x).toBe(1);
     }
 );
+
+test(
+    "new EventContainer()",
+    () => {
+        new EventContainer();
+    }
+)
