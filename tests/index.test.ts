@@ -21,8 +21,18 @@ test(
     () => {
         const container = new EventContainer();
         const handler = () => console.log('event handled');
+
+        
+
+        expect(container).toHaveProperty('getEventListeners');
+        expect(
+            container.getEventListeners('battery_low')
+        ).toBe(0);
+
         expect(container).toHaveProperty('addEventListener');
 
-        container.addEventListener('event_name', handler);
+        container.addEventListener('battery_low', handler);
+
+        container.getEventListeners('battery_low');
     }
 )

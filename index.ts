@@ -2,7 +2,14 @@
 
 export class EventContainer {
 
-    addEventListener(eventName, handler) {
-        
+    handlers: Function[] = [];
+
+    addEventListener(eventName: string[], handler) {
+        return this.handlers.push(handler);
     }
+
+    getEventListeners(eventName: string[]) {
+        return this.handlers.length;
+    }
+    
 }
