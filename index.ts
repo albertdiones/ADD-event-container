@@ -30,19 +30,26 @@ export class EventContainer {
         );
     }
 
-    // return a map of Array of Promises so the event handler's results
-    // can be accessed by the dispatchEvent caller ???
-    dispatchEvent(event: Event): void {
-        const handlers: EventHandler[] = this
+    protected _getEventHandlers(event: Event): EventHandler[] {
+        return this
             .getEventListeners(event.type).map(
                 eventHandlerPair => eventHandlerPair.handler
             );
-        
+    }
+
+    protected _executeEventHandlers(event: Event, handlers: EventHandler[]): void {
         handlers.map(
             (handler: EventHandler) => {
                 handler(event) // should pass event details/context
             }
         );
+    }
+
+    // return a map of Array of Promises so the event handler's results
+    // can be accessed by the dispatchEvent caller ???
+    dispatchEvent(event: Event): void {
+        const handlers = this._getEventHandlers(event);
+        this._executeEventHandlers(event, handlers);
     }
     
 }
