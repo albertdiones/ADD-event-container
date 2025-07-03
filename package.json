@@ -1,9 +1,10 @@
 {
-  "name": "add_event_driven",
+  "name": "ADD-event-container",
   "description": "Requirements:\r  * a function e.g. addEventListener('candle_updated', () => {})\r  * a function for dispatching event dispatchEvent('candle_updated')\r  * a test confirming that dispatching an event triggers a handler",
   "version": "0.0.0",
   "main": "index.ts",
   "devDependencies": {
+    "@types/bun": "^1.1.16",
     "jest": "^29.7.0"
   },
   "scripts": {
