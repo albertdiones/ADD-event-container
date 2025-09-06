@@ -5,7 +5,6 @@ type EventHandler = (event: Event) => void;
 
 // possibly renameable to something more descriptive? because what pair???
 interface EventHandlerPair {
-    id: number,
     event_name: string;
     handler: EventHandler;
 }
@@ -13,18 +12,14 @@ interface EventHandlerPair {
 export class EventContainer {
 
     handlers: EventHandlerPair[] = [];
-    id: number = 1;
 
-    addEventListener(eventName: string, handler: EventHandler): number {
-        const id = this.id++;
+    addEventListener(eventName: string, handler: EventHandler): void {
         this.handlers.push(
             {
-                id: id ,
                 event_name: eventName, 
                 handler: handler
             }
         );
-        return id;
     }
 
     getEventListeners(eventName: string): EventHandlerPair[] {
