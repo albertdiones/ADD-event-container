@@ -44,6 +44,42 @@ test(
 );
 
 test(
+    "removeEventListenerById()",
+    () => {
+        const container = new EventContainer();
+
+        
+
+        expect(container).toHaveProperty('getEventListeners');
+        expect(
+            container.getEventListeners('battery_low')
+        ).toHaveLength(0);
+
+        expect(container).toHaveProperty('addEventListener');
+
+        const id1 = container.addEventListener(
+            'battery_low', 
+            () => console.log('event 1')
+        );
+        const id2 = container.addEventListener(
+            'battery_low',
+            () => console.log('event 2')
+        );
+        const id3 = container.addEventListener(
+            'battery_low',
+            () => console.log('event 1')
+        );
+        expect(container.getEventListeners('battery_low')).toHaveLength(3);
+        container.removeEventListenerById(id2);
+        expect(container.getEventListeners('battery_low')).toHaveLength(2);
+        container.removeEventListenerById(id1);
+        expect(container.getEventListeners('battery_low')).toHaveLength(1);
+        container.removeEventListenerById(id3);        
+        expect(container.getEventListeners('battery_low')).toHaveLength(0);
+    }
+);
+
+test(
     'new Event()',
     () => {
         const click = new Event('click',{keyCode: 123});

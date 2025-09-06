@@ -19,12 +19,25 @@ export class EventContainer {
         const id = this.id++;
         this.handlers.push(
             {
-                id: id ,
+                id: id,
                 event_name: eventName, 
                 handler: handler
             }
         );
         return id;
+    }
+
+    removeEventListenerById(id: number) {
+        const index = this.handlers
+            .findIndex(
+                (handler) => handler.id === id
+            );
+        
+        if (index === -1) {
+            return; 
+        }
+        
+        this.handlers.splice(index, 1);
     }
 
     getEventListeners(eventName: string): EventHandlerPair[] {
