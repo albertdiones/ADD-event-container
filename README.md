@@ -1,4 +1,10 @@
+Vision:
+An lightweight event driven package, with only the basic necessary functions
 
+Rules:
+ 1. no production dependencies
+ 2. if it can be done by an extending package, do not put it here
+ 
 
 Requirements:
  * a function e.g. addEventListener('candle_updated', () => {})
