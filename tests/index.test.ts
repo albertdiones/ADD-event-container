@@ -31,9 +31,13 @@ test(
 
         expect(container).toHaveProperty('addEventListener');
 
-        container.addEventListener('battery_low', handler);
+        const id1 = container.addEventListener('battery_low', handler);
 
-        container.addEventListener('fully_charged', handler);
+        expect(id1).toEqual(1);
+
+        const id2 = container.addEventListener('fully_charged', handler);
+        
+        expect(id2).toEqual(2);
 
         expect(container.getEventListeners('battery_low')).toHaveLength(1);
     }
