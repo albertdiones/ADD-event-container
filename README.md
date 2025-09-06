@@ -34,5 +34,5 @@ Todo List:
  * [x] Fail Test: structure on the event data
  * [x] Pass test: create/update interface for the event data
  * addEventListener() priority parameter, allowing specific handlers to have priority over others
- * addEventListener handler label, which will allow readability or identifiability on the handler
- * addEventListener Schedule???? allowing delayed or deferred handling of the event
+ * addEventListener handler label, which will allow readability or identifiability on the handler (Sep062025: this could be redundant with the idea of "id" field commit f0e230208)
+ * addEventListener Schedule???? allowing delayed or deferred handling of the event - thiss sounds like it should be on the handler or an extending package
